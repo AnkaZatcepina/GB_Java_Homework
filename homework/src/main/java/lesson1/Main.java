@@ -22,9 +22,9 @@ public class Main
 
         //Задание 3
         int[] intArray = new int[] {3, 2, 2, 3};
-        int[] newArray = moveValueToEndOfArray(intArray, 3);
+        moveValueToEndOfArray(intArray, 3);
         int[] intArray2 = new int[] {1, 1, 4, 5, 6, 1, 7, 8, 1};
-        int[] newArray2 = moveValueToEndOfArray(intArray2, 1);
+        moveValueToEndOfArray(intArray2, 1);
     
     }
 
@@ -72,25 +72,31 @@ public class Main
         Если в массиве есть числа, равные заданному, нужно перенести эти элементы в конец массива.
         Таким образом, первые несколько (или все) элементов массива должны быть отличны от заданного, а остальные - равны ему.
     */
-    private static int[] moveValueToEndOfArray(int[] intArray, int value)
+    private static void moveValueToEndOfArray(int[] intArray, int value)
     {
-        int[] newIntArray = new int[intArray.length];
-        int count = 0;
-        
-        for (int i = 0; i<intArray.length; i++){
-            if (intArray[i] != value) {
-                newIntArray[count]=intArray[i];
-                count++;
-            }
-        }
-        for (int i = count; i<newIntArray.length; i++){
-            newIntArray[i] = value;
-        }
-
         System.out.println("Исходный массив:");
         System.out.println(Arrays.toString(intArray));
+        
+        int left = 0;
+        int right = intArray.length - 1;
+        int temp;
+        
+        while (left < right){
+            if (intArray[left] != value){
+                left++;
+                continue;
+            }
+            if (intArray[right] == value){
+                right--;
+                continue;
+            }
+            temp = intArray[left];
+            intArray[left] = intArray[right];
+            intArray[right] = temp;
+
+        }
+
         System.out.println("Новый массив:");
-        System.out.println(Arrays.toString(newIntArray));
-        return newIntArray;
+        System.out.println(Arrays.toString(intArray));
     }
 }
