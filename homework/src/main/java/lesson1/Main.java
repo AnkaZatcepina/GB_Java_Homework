@@ -2,6 +2,8 @@ package lesson1;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Collections;
+import java.util.List;
 
 public class Main 
 {
@@ -45,6 +47,7 @@ public class Main
         System.out.println(Arrays.toString(intArray));
         System.out.println("Максимум = " + Arrays.stream(intArray).max().getAsInt());     
         System.out.println("Минимум = " + Arrays.stream(intArray).min().getAsInt());
+   
     }
 
 
@@ -90,9 +93,8 @@ public class Main
                 right--;
                 continue;
             }
-            temp = intArray[left];
             intArray[left] = intArray[right];
-            intArray[right] = temp;
+            intArray[right] = value;
 
         }
 
