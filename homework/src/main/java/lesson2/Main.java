@@ -68,8 +68,9 @@ public class Main {
     }
     public static void writeStringToFile(String str) 
     {
+        String PATH = "../../resources/lesson2/stringToFile.txt";
         try {
-            Files.write(Paths.get("../../resources/lesson2/stringToFile.txt"), str.getBytes());
+            Files.write(Paths.get(PATH), str.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,23 +78,15 @@ public class Main {
     
     public static void writeStringToFileBufferedWriter(String str) 
     {
-        File file = new File("../../resources/lesson2/stringToFileBufferedWriter.txt");
-        FileWriter fr = null;
-        BufferedWriter br = null;
-        try{
-            fr = new FileWriter(file);
-            br = new BufferedWriter(fr);
+        String PATH = "../../resources/lesson2/stringToFileBufferedWriter.txt";
+        File file = new File(PATH);
+        try (FileWriter fr = new FileWriter(file);
+             BufferedWriter br = new BufferedWriter(fr))
+        {
             br.write(str);
 
         } catch (IOException e) {
             e.printStackTrace();
-        }finally{
-            try {
-                br.close();
-                fr.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }
