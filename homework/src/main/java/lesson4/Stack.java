@@ -7,7 +7,11 @@ package lesson4;
 */
 import java.util.*;
 
+
 public class Stack {
+
+   
+
     public static void main( String[] args )
     {
         Scanner in = new Scanner(System.in);
@@ -23,23 +27,27 @@ public class Stack {
                 continue;
             }
 
-            if (inputString.equals("stop")) {
-                System.exit(0);
-            } else if (inputString.equals("print")) {
-                Iterator iterator = wordsList.descendingIterator();
-                while(iterator.hasNext()) {
-                    System.out.println(iterator.next());
-                }
-            } else if (inputString.equals("revert")) {
-                if (wordsList.size() > 0) {
-                wordsList.removeLast();
-                } else {
-                    System.out.println("Стек уже пуст");
-                }
-                
-            } else {
-                wordsList.add(inputString);
-            }           
+            switch (inputString) {
+                case "stop":
+                    System.exit(0);
+                    break;
+                case "print":
+                    Iterator iterator = wordsList.descendingIterator();
+                    while(iterator.hasNext()) {
+                        System.out.println(iterator.next());
+                    }
+                    break;
+                case "revert":                   
+                    if (wordsList.size() > 0) {
+                        wordsList.removeLast();
+                    } else {
+                        System.out.println("Стек уже пуст");
+                    }
+                    break;
+                default:             
+                    wordsList.add(inputString);
+                    break;
+            }   
         }
 
     }
