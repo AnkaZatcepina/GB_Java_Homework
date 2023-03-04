@@ -14,7 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
         IRepository repository = new RepositoryFolderTxt("source//notesTxt", new ParserTxt(new SimpleDateFormat("dd.MM.yyyy")));
-        NoteController controller = new NoteController(repository);
+        //AbstractNoteController controller = new NoteController(repository);
+        AbstractNoteController controller = new NoteControllerLogDecorated(repository, new LogToFile("source//log.txt"));
+        
         IView view = new ViewConsole(controller);
         view.run();
     }
