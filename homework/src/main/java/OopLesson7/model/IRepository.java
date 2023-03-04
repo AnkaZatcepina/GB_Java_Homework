@@ -1,8 +1,6 @@
-package OopLesson7.controller;
+package OopLesson7.model;
 
 import java.util.List;
-
-import OopLesson7.model.Note;
 
 public interface IRepository {
     List<Note> readAll();

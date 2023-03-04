@@ -1,4 +1,4 @@
-package OopLesson7.controller;
+package OopLesson7.model;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -74,11 +74,5 @@ public class FileOperation implements IFileOperation {
         
     }
 
-    public void updateNote() {
-
-        deleteNote();
-
-        
-    }
 }
 
