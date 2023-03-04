@@ -54,7 +54,7 @@ public class Note {
     }
 
     public String toString(){
-        DateFormat dateFormat = new SimpleDateFormat("dd.mm.yyyy");  
+        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");  
         return String.format("Заметка: %s\nЗаголовок: %s\nДата: %s\nТекст: %s", id, header, dateFormat.format(date), text);    
     }
 
