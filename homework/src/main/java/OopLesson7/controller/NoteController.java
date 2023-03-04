@@ -2,6 +2,7 @@ package OopLesson7.controller;
 
 import java.util.List;
 
+import OopLesson7.model.IRepository;
 import OopLesson7.model.Note;
 
 

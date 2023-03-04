@@ -1,4 +1,4 @@
-package OopLesson7.controller;
+package OopLesson7.model;
 
 import java.util.List;
 

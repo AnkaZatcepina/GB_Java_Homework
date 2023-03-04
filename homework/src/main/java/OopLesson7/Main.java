@@ -1,6 +1,8 @@
 package OopLesson7;
 
 import OopLesson7.controller.*;
+import OopLesson7.model.IRepository;
+import OopLesson7.model.RepositoryFolderTxt;
 import OopLesson7.view.*;
 
 

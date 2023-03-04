@@ -1,4 +1,4 @@
-package OopLesson7.controller;
+package OopLesson7.model;
 
 import java.io.File;
 import java.text.ParseException;
@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import OopLesson7.model.Note;
 
 public class RepositoryFolderTxt implements IRepository{
     String path = "";
