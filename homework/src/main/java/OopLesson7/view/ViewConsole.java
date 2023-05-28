@@ -2,13 +2,13 @@ package OopLesson7.view;
 
 import java.util.List;
 import java.util.Scanner;
-import OopLesson7.controller.NoteController;
+import OopLesson7.controller.AbstractNoteController;
 import OopLesson7.model.Note;
 
 public class ViewConsole implements IView{
-    private NoteController controller;
+    private AbstractNoteController controller;
 
-    public ViewConsole(NoteController controller) {
+    public ViewConsole(AbstractNoteController controller) {
         this.controller = controller;
     }
 
