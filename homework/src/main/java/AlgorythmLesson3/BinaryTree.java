@@ -9,12 +9,12 @@ public class BinaryTree <V extends Comparable<V>>{
     private Node root;
 
     private class Node {
-        private V value;
+        private int value;
         private Node left;
         private Node right;
     }
 
-    private boolean isExistDown(Node node, V value){
+    private boolean isExistDown(Node node, int value){
         if (node == null) {
             return false;
         }
@@ -29,7 +29,7 @@ public class BinaryTree <V extends Comparable<V>>{
 
     }
 
-    public boolean isExist(V value){
+    public boolean isExist(int value){
         if (root == null) {
             return false;
         }
